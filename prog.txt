@@ -1,0 +1,20 @@
+input n
+input m
+a = 0
+b = 1
+if n goto 14
+u = a + b
+v = a + b
+u = u % m
+v = v % m
+w = u - v
+if w goto 6
+a = b
+b = u
+u = n - 1
+v = n - 1
+w = u - v
+if w goto 14
+n = u
+if n goto 6
+output b

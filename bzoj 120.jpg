@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	cin>>n;
+	for(int i=1;i<=n;i++)
+	{
+		int a,b;cin>>a>>b;
+		if(a==0)
+		{
+			if(sp0.size()>sp1.size())	sp0.insert(b);
+			else
+			{
+				int las=sp1.findlas(b),nxt=sp1.findnxt(b);
+				if(abs(b-las)<=abs(b-nxt))	sp1.erase(las),ans+=abs(b-las);
+				else	sp1.erase(nxt),abs+=abs(b-nxt);
+			}
+		}
+		else
+		{
+			if(sp0.size()>sp1.size())
+			{
+				int las=sp0.findlas(b),nxt=sp0.findnxt(b);
+				if(abs(b-las)<=abs(b-nxt))	sp0.erase(las),ans+=abs(b-las);
+				else	sp0.erase(nxt),ans+=(b-nxt);
+			}
+			else	sp1.insert(b);
+		}
+	}
+}
